@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	ID        int       `json:"id"`
+	ID        int       `json:"id,omitempty"`
 	Username  string    `json:"username"`
 	Email     string    `json:"email"`
 	Password  string    `json:"password,omitempty"`
@@ -42,4 +42,9 @@ type Cart struct {
 	Quantity  int       `json:"quantity"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
+}
+
+type LoginUser struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
 }

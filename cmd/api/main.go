@@ -1,16 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"go_ecom/internal/server"
+	"log"
 )
 
 func main() {
+	// Initialize the server
+	srv := server.NewServer()
 
-	server := server.NewServer()
-
-	err := server.ListenAndServe()
-	if err != nil {
-		panic(fmt.Sprintf("cannot start server: %s", err))
+	// Start the server and handle any errors
+	if err := srv.ListenAndServe(); err != nil {
+		log.Fatalf("cannot start server: %s", err)
 	}
 }
