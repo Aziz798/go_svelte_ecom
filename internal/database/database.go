@@ -45,6 +45,50 @@ func New() Service {
 		// another initialization error.
 		log.Fatal(err)
 	}
+	// 	db.Exec(`
+	// 	CREATE TABLE Users (
+	//     ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	//     Username TEXT NOT NULL,
+	//     Email TEXT NOT NULL UNIQUE,
+	//     Password TEXT,
+	//     Role TEXT NOT NULL,
+	//     CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	//     UpdatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+	// );
+
+	// CREATE TABLE Categories (
+	//     ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	//     Title TEXT NOT NULL,
+	//     CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	//     UpdatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+	// );
+
+	// CREATE TABLE Products (
+	//     ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	//     Title TEXT NOT NULL,
+	//     Description TEXT,
+	//     Price REAL NOT NULL,
+	//     Quantity INTEGER NOT NULL,
+	//     ImageURL TEXT,
+	//     CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	//     UpdatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	//     UserID INTEGER NOT NULL,
+	//     CategoryID INTEGER NOT NULL,
+	//     FOREIGN KEY (UserID) REFERENCES Users(ID),
+	//     FOREIGN KEY (CategoryID) REFERENCES Categories(ID)
+	// );
+
+	// CREATE TABLE Carts (
+	//     ID INTEGER PRIMARY KEY AUTOINCREMENT,
+	//     UserID INTEGER NOT NULL,
+	//     ProductID INTEGER NOT NULL,
+	//     Quantity INTEGER NOT NULL,
+	//     CreatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	//     UpdatedAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	//     FOREIGN KEY (UserID) REFERENCES Users(ID),
+	//     FOREIGN KEY (ProductID) REFERENCES Products(ID)
+	// );
+	// `)
 
 	dbInstance = &service{
 		db: db,
